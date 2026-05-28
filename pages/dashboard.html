@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyFlow — Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body class="app-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon">✦</span>
+      <span>StudyFlow</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item active">
+        <span class="nav-icon">◈</span> Dashboard
+      </a>
+      <a href="tasks.html" class="nav-item">
+        <span class="nav-icon">◻</span> Tarefas
+      </a>
+      <a href="subjects.html" class="nav-item">
+        <span class="nav-icon">◉</span> Matérias
+      </a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="user-avatar" id="userAvatar">?</div>
+      <div class="user-info">
+        <p class="user-name" id="userName">—</p>
+        <button class="btn-logout" id="logoutBtn">Sair</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-content">
+    <header class="page-header">
+      <div>
+        <h2 id="greeting">Olá! 👋</h2>
+        <p class="header-sub">Veja o resumo do seu progresso</p>
+      </div>
+      <div class="header-date" id="headerDate"></div>
+    </header>
+
+    <!-- Stats -->
+    <section class="stats-grid">
+      <div class="stat-card accent-blue">
+        <div class="stat-label">Total de tarefas</div>
+        <div class="stat-value" id="statTotal">0</div>
+      </div>
+      <div class="stat-card accent-green">
+        <div class="stat-label">Concluídas</div>
+        <div class="stat-value" id="statDone">0</div>
+      </div>
+      <div class="stat-card accent-amber">
+        <div class="stat-label">Pendentes</div>
+        <div class="stat-value" id="statPending">0</div>
+      </div>
+      <div class="stat-card accent-purple">
+        <div class="stat-label">Progresso</div>
+        <div class="stat-value" id="statProgress">0%</div>
+      </div>
+    </section>
+
+    <!-- Progress bar -->
+    <section class="progress-section">
+      <div class="progress-header">
+        <span>Progresso geral</span>
+        <span id="progressLabel">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+      </div>
+    </section>
+
+    <!-- Recent tasks + quick add -->
+    <section class="dashboard-bottom">
+      <div class="recent-tasks">
+        <div class="section-header">
+          <h3>Tarefas recentes</h3>
+          <a href="tasks.html" class="link-small">Ver todas →</a>
+        </div>
+        <div id="recentTasksList" class="task-list-mini"></div>
+      </div>
+
+      <div class="quick-add-panel">
+        <h3>Adicionar tarefa rápida</h3>
+        <form id="quickAddForm" class="quick-form">
+          <input type="text" id="quickTitle" placeholder="Nome da tarefa..." required />
+          <select id="quickSubject">
+            <option value="">Selecionar matéria...</option>
+          </select>
+          <select id="quickPriority">
+            <option value="low">Prioridade baixa</option>
+            <option value="medium" selected>Prioridade média</option>
+            <option value="high">Prioridade alta</option>
+          </select>
+          <button type="submit" class="btn-primary">+ Adicionar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
